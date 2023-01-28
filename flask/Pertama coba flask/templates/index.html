@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head><title>Aplikasi Prediksi Biaya Asuransi</title></head>
+<body></body>
+<div align=center bgcolor=grey>
+
+    <h1> Prediksi Biaya Ansuransi Berbasis Mechine Learning</h1>
+    
+    <form action="{{ url_for('predict')}}" method="post">
+    <br>Umur : <input type="text" name="Usia"/>
+    <br>Jenis Kelamin :
+    <select name="Jenis Kelamin" id="Jenis Kelamin">
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Wanita">Perempuan</option>
+    </select>   
+    <br>Perokok
+        <select name="Perokok" id="Perokok">
+            <option value="Ya">Ya</option>
+            <option value="Tidak">Tidak<option>
+        </select>
+        <br><br>
+        <button type="submit">PREDIKSI SEKARANG</button>
+    </form>
+    
+    <h1>Berdasarkan data yang anda masukkan, biaya asuransi anda diperikakan :</h1>
+    <h2>USD {{insurance_cost}}</h2>
+    {% if (insurance_cost) != 0%}
+    <div>
+        <p>Usia: {{ age }} tahun</p>
+        <p>Jenis Kelamin : {{ sex }}</p>
+        <p>Status perokok : {{ smoker }}</p>
+    </div>
+    {% endIf %}
+</div>
+<div>
+    </body>
+</html>
+        
